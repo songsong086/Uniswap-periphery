@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../v2-core/.idea/v2-core.iml" filepath="$PROJECT_DIR$/../v2-core/.idea/v2-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/v2-periphery.iml" filepath="$PROJECT_DIR$/.idea/v2-periphery.iml" />
     </modules>
   </component>

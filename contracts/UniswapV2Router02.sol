@@ -11,10 +11,10 @@ import './interfaces/IWETH.sol';
 
 contract UniswapV2Router02 is IUniswapV2Router02 {
     using SafeMath for uint;
-
+//不可变量只能在构造函数中赋值
     address public immutable override factory;
     address public immutable override WETH;
-
+//函数修改器确保有时间限制的交易
     modifier ensure(uint deadline) {
         require(deadline >= block.timestamp, 'UniswapV2Router: EXPIRED');
         _;
@@ -24,7 +24,8 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         factory = _factory;
         WETH = _WETH;
     }
-
+//将代币从包装以太币合约换回以太币时，需要调用此函数
+//只有我们使用的包装以太币合约才能授权 完成此操作
     receive() external payable {
         assert(msg.sender == WETH); // only accept ETH via fallback from the WETH contract
     }
